@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --color-ink: #070708;
+  --color-ink-soft: #101012;
+  --color-panel: #141417;
+  --color-line: #2a272c;
+  --color-mist: #8a8480;
+  --color-ivory: #e8e4df;
+  --color-plum: #6e3b52;
+  --color-plum-soft: #8a5268;
+}
+
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-ivory);
+  transition: background-color 9999s ease-in-out 0s;
+  box-shadow: 0 0 0 1000px #161418 inset;
+}
