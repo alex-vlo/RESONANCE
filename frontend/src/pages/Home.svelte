@@ -17,8 +17,8 @@
   <div class="grain pointer-events-none absolute inset-0"></div>
 
   <header class="relative z-10 flex items-center justify-between px-10 py-8">
-    <p class="font-display text-2xl tracking-tight">Panel</p>
-    <button class="text-sm tracking-[0.18em] text-mute uppercase hover:text-ink" type="button" onclick={logout}>
+    <p class="font-display text-sm tracking-[0.42em] text-gold uppercase">RESONANCE</p>
+    <button class="text-sm tracking-[0.18em] text-mute uppercase hover:text-gold" type="button" onclick={logout}>
       Salir
     </button>
   </header>

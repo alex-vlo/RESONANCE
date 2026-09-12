@@ -3,10 +3,11 @@
 @theme {
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Space Grotesk", system-ui, sans-serif;
-  --color-paper: #eceae6;
-  --color-ink: #1a1a1a;
-  --color-mute: #6e6c69;
-  --color-line: #c5c1ba;
+  --color-paper: #0a0a0a;
+  --color-ink: #e8e4d8;
+  --color-mute: #8a8578;
+  --color-line: #2a261c;
+  --color-gold: #d4af37;
 }
 
 html,
@@ -17,8 +18,8 @@ body,
 
 body {
   margin: 0;
-  background: #eceae6;
-  color: #1a1a1a;
+  background: #0a0a0a;
+  color: #e8e4d8;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
@@ -28,52 +29,45 @@ body {
 }
 
 .grain {
-  opacity: 0.28;
+  opacity: 0.18;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
-  mix-blend-mode: multiply;
+  mix-blend-mode: overlay;
 }
 
-.field {
-  width: 100%;
-  border: 0;
-  border-bottom: 1px solid #c5c1ba;
+.btn-login {
+  border: 1px solid #d4af37;
   background: transparent;
-  padding: 0.45rem 0 0.55rem;
-  color: #1a1a1a;
-  outline: none;
-  font-size: 0.95rem;
-}
-
-.field:focus {
-  border-bottom-color: #1a1a1a;
-}
-
-.btn-ink {
-  margin-top: 0.5rem;
-  border: 1px solid #1a1a1a;
-  background: #1a1a1a;
-  color: #eceae6;
-  padding: 0.7rem 1.1rem;
-  font-size: 0.7rem;
+  color: #d4af37;
+  padding: 0.45rem 1rem;
+  font-size: 0.65rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  width: 100%;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.btn-ink:hover:not(:disabled) {
-  background: transparent;
-  color: #1a1a1a;
+.card {
+  border: 1px solid #2a261c;
+  background: rgba(10, 10, 10, 0.55);
+  padding: 1.15rem 1.2rem 1.25rem;
+  backdrop-filter: blur(6px);
 }
 
-.btn-ink:disabled {
-  opacity: 0.45;
+.card-kicker {
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #d4af37;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: #1a1a1a;
-  transition: background-color 9999s ease-in-out 0s;
-  box-shadow: 0 0 0 1000px #eceae6 inset;
+.card-title {
+  margin-top: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: #e8e4d8;
+}
+
+.player {
+  border-top: 1px solid #2a261c;
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(10px);
 }

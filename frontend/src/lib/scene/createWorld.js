@@ -46,7 +46,7 @@ function sampleTorusKnot(count) {
 function createContours() {
   const group = new THREE.Group();
   const material = new THREE.LineBasicMaterial({
-    color: 0x8d99aa,
+    color: 0xd4af37,
     transparent: true,
     opacity: 0.42,
   });
@@ -81,7 +81,7 @@ export function createWorld(canvas) {
     alpha: true,
     powerPreference: "high-performance",
   });
-  renderer.setClearColor(0x000000, 0);
+  renderer.setClearColor(0x0a0a0a, 0);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
 
   const scene = new THREE.Scene();
@@ -100,7 +100,7 @@ export function createWorld(canvas) {
   const points = new THREE.Points(
     geometry,
     new THREE.PointsMaterial({
-      color: 0x161616,
+      color: 0xd4af37,
       size: 0.026,
       sizeAttenuation: true,
       transparent: true,
@@ -113,7 +113,7 @@ export function createWorld(canvas) {
 
   const ring = new THREE.Mesh(
     new THREE.RingGeometry(0.22, 0.236, 64),
-    new THREE.MeshBasicMaterial({ color: 0x1a1a1a, side: THREE.DoubleSide })
+    new THREE.MeshBasicMaterial({ color: 0xd4af37, side: THREE.DoubleSide })
   );
   ring.position.set(1.15, -0.85, 0.8);
   scene.add(ring);
