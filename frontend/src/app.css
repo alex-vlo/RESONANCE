@@ -1,16 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Outfit", system-ui, sans-serif;
-  --color-ink: #070708;
-  --color-ink-soft: #101012;
-  --color-panel: #141417;
-  --color-line: #2a272c;
-  --color-mist: #8a8480;
-  --color-ivory: #e8e4df;
-  --color-plum: #6e3b52;
-  --color-plum-soft: #8a5268;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --color-paper: #eceae6;
+  --color-ink: #1a1a1a;
+  --color-mute: #6e6c69;
+  --color-line: #c5c1ba;
 }
 
 html,
@@ -21,16 +17,63 @@ body,
 
 body {
   margin: 0;
-  background: var(--color-ink);
-  color: var(--color-ivory);
+  background: #eceae6;
+  color: #1a1a1a;
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.grain {
+  opacity: 0.28;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+.field {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #c5c1ba;
+  background: transparent;
+  padding: 0.45rem 0 0.55rem;
+  color: #1a1a1a;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.field:focus {
+  border-bottom-color: #1a1a1a;
+}
+
+.btn-ink {
+  margin-top: 0.5rem;
+  border: 1px solid #1a1a1a;
+  background: #1a1a1a;
+  color: #eceae6;
+  padding: 0.7rem 1.1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  width: 100%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btn-ink:hover:not(:disabled) {
+  background: transparent;
+  color: #1a1a1a;
+}
+
+.btn-ink:disabled {
+  opacity: 0.45;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--color-ivory);
+  -webkit-text-fill-color: #1a1a1a;
   transition: background-color 9999s ease-in-out 0s;
-  box-shadow: 0 0 0 1000px #161418 inset;
+  box-shadow: 0 0 0 1000px #eceae6 inset;
 }

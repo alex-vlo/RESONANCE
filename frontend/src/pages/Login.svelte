@@ -1,5 +1,5 @@
 <script>
-  import AuthShell from "../lib/AuthShell.svelte";
+  import AuthStage from "../lib/AuthStage.svelte";
   import { api } from "../lib/api.js";
   import { saveSession } from "../lib/session.js";
 
@@ -26,47 +26,32 @@
   }
 </script>
 
-<AuthShell title="Entrar" subtitle="Accede con tu correo y contraseña.">
-  <form class="space-y-5" onsubmit={submit}>
-    <label class="block">
-      <span class="mb-2 block text-[11px] tracking-[0.22em] text-mist uppercase">Correo</span>
-      <input
-        class="w-full border border-line bg-ink-soft px-3 py-2.5 text-sm text-ivory outline-none transition focus:border-plum-soft"
-        type="email"
-        autocomplete="email"
-        bind:value={email}
-        required
-      />
-    </label>
+<AuthStage current="login" goLogin={() => {}} {goRegister}>
+  <div class="brand mb-10 flex items-center gap-3">
+    <svg class="h-9 w-9" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M8 36L18 8h6L14 36H8zm16 0L34 8h6L30 36h-6z" fill="#1a1a1a" />
+      <path d="M20 22h8v4h-8z" fill="#1a1a1a" />
+    </svg>
+    <div>
+      <p class="font-display text-[2.4rem] leading-none tracking-tight">Panel</p>
+      <p class="mt-2 text-sm text-mute">Administración · acceso</p>
+    </div>
+  </div>
 
+  <form class="max-w-xs space-y-6" onsubmit={submit}>
     <label class="block">
-      <span class="mb-2 block text-[11px] tracking-[0.22em] text-mist uppercase">Contraseña</span>
-      <input
-        class="w-full border border-line bg-ink-soft px-3 py-2.5 text-sm text-ivory outline-none transition focus:border-plum-soft"
-        type="password"
-        autocomplete="current-password"
-        bind:value={password}
-        required
-      />
+      <span class="mb-2 block text-[11px] tracking-[0.2em] text-mute uppercase">Correo</span>
+      <input class="field" type="email" autocomplete="email" bind:value={email} required />
     </label>
-
+    <label class="block">
+      <span class="mb-2 block text-[11px] tracking-[0.2em] text-mute uppercase">Contraseña</span>
+      <input class="field" type="password" autocomplete="current-password" bind:value={password} required />
+    </label>
     {#if error}
-      <p class="text-sm text-plum-soft">{error}</p>
+      <p class="text-sm text-red-800/80">{error}</p>
     {/if}
-
-    <button
-      class="mt-2 w-full bg-plum py-2.5 text-[11px] tracking-[0.28em] text-ivory uppercase transition hover:bg-plum-soft disabled:opacity-50"
-      type="submit"
-      disabled={loading}
-    >
+    <button class="btn-ink" type="submit" disabled={loading}>
       {loading ? "Entrando…" : "Continuar"}
     </button>
   </form>
-
-  <p class="mt-8 text-center text-sm font-light text-mist">
-    ¿Aún no tienes cuenta?
-    <button class="text-ivory underline decoration-plum/70 underline-offset-4" type="button" onclick={goRegister}>
-      Crear una
-    </button>
-  </p>
-</AuthShell>
+</AuthStage>
